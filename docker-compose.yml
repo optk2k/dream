@@ -1,3 +1,8 @@
+
+networks:
+  dream_default:
+    external: true
+
 services:
   agent:
     env_file: [.env]
@@ -39,9 +44,5 @@ services:
       - POSTGRES_HOST=${DATABASE_HOST}
     networks:
       - dream_default
-
-networks:
-  dream_default:
-    external: true
 
 version: '3.7'
