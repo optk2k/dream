@@ -12,11 +12,12 @@ python-dotenv = "*"
 jinja2 = "*"
 python-multipart = "*"
 httpx = "*"
+gunicorn = "*"
+uvicorn = "*"
 
 [dev-packages]
 ptpython = "*"
 pudb = "*"
-uvicorn = "*"
 
 [requires]
 python_version = "3.11"

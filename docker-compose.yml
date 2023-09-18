@@ -20,7 +20,7 @@ services:
     build:
       context: ./
       dockerfile: ./web_app/Dockerfile
-    container_name: web
+    container_name: dream
     ports:
       - 8000:8000
     depends_on:
