@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block action %}spacy_nounphrases{% endblock %}
+
+{% block records %}
+    {% for item in records %}
+    <tr>
+        <td>{{ item.request }}</td>
+        {% set list = item.response.split(';') %}
+        <td>
+            <ol>
+                {% for item in list %}
+                    <li>{{ item }}</li>
+                {% endfor %} 
+            </ol>
+        </td>
+    </tr>
+    {% endfor %}
+{% endblock %}

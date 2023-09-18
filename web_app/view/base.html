@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <title>Страница запроса</title>
+    <style>
+        td {
+          width: 50%;
+          text-align: left;
+        }
+      </style>
+  </head>
+  <body>
+    </br>
+    <div class="container text-center">
+        <nav class="cow">
+            <a href="badlisted_words">
+                <button type="button" class="btn btn-lg btn-primary">badlisted_words</button>
+            </a>
+            <a href="spacy_nounphrases">
+                <button type="button" class="btn btn-lg btn-primary">spacy_nounphrases</button>
+            </a>
+        </nav>
+        <br/>
+    <form action="{% block action %}{% endblock %}" method="post">
+        <div class="row">
+            <div class="col">
+                <textarea class="form-control" rows="5" name="text"></textarea>
+                </br>
+
+                <div class="d-grid gap-2">
+                    <input class="btn btn-primary btn-lg" type="submit" value="отправить" />
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <br/>
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+            <tbody>
+                {% block records %}
+                    {% for item in records %}
+                    <tr>
+                        <td>{{ item.request }}</td>
+                        <td>{{ item.response }}</td>
+                    </tr>
+                    {% endfor %}
+                {% endblock %}
+            </tbody>
+        </table>
+    </div>
+
+    </div>
+
+  </body>
+</html>

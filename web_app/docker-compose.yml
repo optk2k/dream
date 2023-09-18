@@ -1,3 +1,4 @@
+version: '3.7'
 services:
   agent:
     env_file: [.env]
@@ -16,11 +17,12 @@ services:
     command: mongod
     image: mongo:4.0.0
 
+
   web:
     build:
       context: ./
       dockerfile: ./web_app/Dockerfile
-    container_name: web
+    container_name: dream
     ports:
       - 8000:8000
     depends_on:
@@ -43,5 +45,3 @@ services:
 networks:
   dream_default:
     external: true
-
-version: '3.7'

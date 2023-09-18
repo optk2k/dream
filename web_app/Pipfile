@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+sqlalchemy = "*"
+psycopg = "*"
+alembic = "*"
+fastapi = "*"
+python-dotenv = "*"
+jinja2 = "*"
+python-multipart = "*"
+httpx = "*"
+
+[dev-packages]
+ptpython = "*"
+pudb = "*"
+uvicorn = "*"
+
+[requires]
+python_version = "3.11"
+python_full_version = "3.11.5"
